@@ -9,21 +9,17 @@ class AppActivity : AppCompatActivity(R.layout.activity_app) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        var inputData = listOf(
-            500F,
-            500F,
-            500F,
-            500F,
+        val inputData = listOf(
             500F,
             500F,
             500F,
             500F,
         )
         val sum = inputData.sum()
-        if (sum != 0F) findViewById<StatsView>(R.id.stats).data = inputData.map {it/sum*100F}
+        if (sum != 0F) findViewById<StatsView>(R.id.stats).data = inputData.map { it / sum * 100F }
         else {
-            val errorText ="No data to display"
-            Toast.makeText(this,errorText,Toast.LENGTH_LONG).show()
+            val errorText = "No data to display"
+            Toast.makeText(this, errorText, Toast.LENGTH_LONG).show()
         }
     }
 }
